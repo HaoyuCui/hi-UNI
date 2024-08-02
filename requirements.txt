@@ -1,0 +1,13 @@
+torch >= 2.0.0
+timm >= 1.0.0
+pandas
+torchvision
+pillow
+numpy
+scikit-learn
+matplotlib
+argparse
+opencv-python
+tqdm
+yaml
+pyyaml
