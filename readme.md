@@ -1,6 +1,6 @@
 <img width="782" alt="hi-UNI" src="https://github.com/user-attachments/assets/1b305393-f7ae-431d-b05f-c2aa3e39564c">
 
-# hiUNI 
+# hi-UNI 
 
 > hierarchical UNI for whole slide image classification
 
