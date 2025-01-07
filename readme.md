@@ -85,7 +85,7 @@ It is also recommended to extract raw patches to at least 1024x1024 resolution, 
 4. The results will be saved in the `runs/` directory.
 
    In the format of:
-   ```markdown
+   ```txt
     ├── runs
     │   ├── {cmbs}_{freeze_ration}  # configuration
     │   │   ├── 1
