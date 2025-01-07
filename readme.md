@@ -82,7 +82,7 @@ It is also recommended to extract raw patches to at least 1024x1024 resolution, 
     sh ./scripts/train_kf.sh
     ```
 
-4. The results will be saved in the `runs/}` directory.
+4. The results will be saved in the `runs/` directory.
 
    In the format of:
    ```markdown
