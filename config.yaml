@@ -1,0 +1,14 @@
+# Dataset
+class_names: ['MMRd', 'NSMP', 'p53abn', 'POLE mut']
+
+# Training
+batch_size: 10  # batch size
+lr: 2e-5  # learning rate
+epochs: 10  # hi-UNI coverages fast, no need for many epochs
+iters_to_val: 400  # set to -1 to validate per epoch
+save_best: True
+
+# Model
+freeze_ratio: 0.6  # ratio of ViT blocks to freeze
+cmb: sml  # in: s, m, l, sm, sl, ml, sml
+UNI_path: pytorch_model.bin  # replace with your own path
