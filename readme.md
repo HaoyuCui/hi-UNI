@@ -1,8 +1,7 @@
-<img width="782" alt="hi-UNI" src="https://github.com/user-attachments/assets/1b305393-f7ae-431d-b05f-c2aa3e39564c">
+hi-UNI <img src="./utils/.hi-UNI-logo.png" width="280px" align="right" />
+===========
 
-# hi-UNI 
-
-> hierarchical UNI for whole slide image classification. Using weakly supervised pipeline.
+hierarchical UNI for whole slide image classification. Using weakly supervised pipeline.
 
 
 ### Installation
@@ -12,6 +11,15 @@ Install the dependencies
 ```bash
 pip install -r requirements.txt
 ```
+
+### Preprocessing
+
+1. We have uploaded another repo for data preprocessing: [WSI_Segmenter](https://github.com/HaoyuCui/WSI_Segmenter). Which can also be found in the `./preprocess` directory.
+
+2. The tumor masks extraction and segmentation steps can be found in the [preprocess/read.md](preprocess/readme.md). 
+
+3. Extract raw patches to at least 1024x1024 resolution, use [tiatoolbox](https://github.com/TissueImageAnalytics/tiatoolbox) or [DeepZoom](https://github.com/ncoudray/DeepPATH/blob/master/DeepPATH_code/00_preprocessing/0b_tileLoop_deepzoom6.py) for patch extraction. The tumor segmentation network can be easily added to these pipelines.
+
 
 ### Data Preparation
 
@@ -33,7 +41,6 @@ pip install -r requirements.txt
 │       └── patch_n.png
 ```
 
-It is also recommended to extract raw patches to at least 1024x1024 resolution, use [tiatoolbox](https://github.com/TissueImageAnalytics/tiatoolbox) or [DeepZoom](https://github.com/ncoudray/DeepPATH/blob/master/DeepPATH_code/00_preprocessing/0b_tileLoop_deepzoom6.py) for patch extraction.
 
 
 2. Create a hierarchical structure for the data.
