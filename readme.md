@@ -14,11 +14,9 @@ pip install -r requirements.txt
 
 ### Preprocessing
 
-1. We have uploaded another repo for data preprocessing: [WSI_Segmenter](https://github.com/HaoyuCui/WSI_Segmenter). Which can also be found in the `./preprocess` directory.
+1. We have uploaded another repo for data preprocessing: [WSI_Segmenter](https://github.com/HaoyuCui/WSI_Segmenter). Which can also be found in the [./preprocess](./preprocess) directory. The detailed patch extraction and segmentation steps can be found in the [./preprocess/read.md](preprocess/readme.md). 
 
-2. The tumor masks extraction and segmentation steps can be found in the [preprocess/read.md](preprocess/readme.md). 
-
-3. Extract raw patches to at least 1024x1024 resolution, use [tiatoolbox](https://github.com/TissueImageAnalytics/tiatoolbox) or [DeepZoom](https://github.com/ncoudray/DeepPATH/blob/master/DeepPATH_code/00_preprocessing/0b_tileLoop_deepzoom6.py) for patch extraction. The tumor segmentation network can be easily added to these pipelines.
+2. Extract raw patches to at least 1024x1024 resolution, use [tiatoolbox](https://github.com/TissueImageAnalytics/tiatoolbox) or [DeepZoom](https://github.com/ncoudray/DeepPATH/blob/master/DeepPATH_code/00_preprocessing/0b_tileLoop_deepzoom6.py) for patch extraction. The tumor segmentation network can be easily added to these pipelines.
 
 
 ### Data Preparation
