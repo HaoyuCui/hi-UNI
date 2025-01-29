@@ -93,7 +93,7 @@ pip install -r requirements.txt
    ```txt
     ├── runs
     │   ├── {cmbs}_{freeze_ration}  # configuration
-    │   │   ├── 1
+    │   │   ├── 1  # fold name
     │   │   │   ├── {fold}_best.pth  # best model
     │   │   │   ├── slide_{iter}.png  # slide-level ROC
     │   │   │   ├── ...
@@ -110,5 +110,5 @@ We are grateful to the authors for sharing their code. We use CLAM for data prep
 - DTFD-MIL (Zhang et al.) [https://github.com/hrzhang1123/DTFD-MIL](https://github.com/hrzhang1123/DTFD-MIL)
 - SETMIL (Zhao et al.) [https://github.com/Louis-YuZhao/SETMIL](https://github.com/Louis-YuZhao/SETMIL)
 - TransMIL (Shao et al.) [https://github.com/szc19990412/TransMIL](https://github.com/szc19990412/TransMIL)
-- im4MEC (Fremind et al.) [https://github.com/AIRMEC/im4MEC](https://github.com/AIRMEC/im4MEC)
+- im4MEC (Fremond et al.) [https://github.com/AIRMEC/im4MEC](https://github.com/AIRMEC/im4MEC)
 
