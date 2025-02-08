@@ -1,7 +1,11 @@
 hi-UNI <img src="./utils/.hi-UNI-logo.png" width="280px" align="right" />
 ===========
 
-hierarchical UNI for whole slide image classification. Using weakly supervised pipeline.
+Official code for **Prediction of molecular subtypes for endometrial cancer based on hierarchical foundation model**. _Bioinformatics_
+
+[Journal link](https://doi.org/10.1093/bioinformatics/btaf059) | [Cite](https://github.com/HaoyuCui/hi-UNI?tab=readme-ov-file#Reference)
+
+> hi-UNI: hierarchical UNI is used for whole slide image classification, using a weakly supervised pipeline. Our method achieved state-of-the-art performance, offering cost-effective and fast molecular subtyping for endometrial cancer.
 
 
 ### Installation
@@ -21,7 +25,7 @@ pip install -r requirements.txt
 
 ### Data Preparation
 
-1. Prepare the data in the following structure, png or jpeg format is supported. Note that extract patches only from the tumor region is recommended.
+1. Prepare the data in the following structure, png or jpeg format is supported. Note that extracting patches only from the tumor region is recommended.
 
 ```markdown
 ├── data
@@ -106,9 +110,16 @@ pip install -r requirements.txt
 
 We are grateful to the authors for sharing their code. We use CLAM for data preprocessing and feature extraction in comparison experiments.
 
-- CLAM (Lu et al.) [https://github.com/mahmoodlab/CLAM](https://github.com/mahmoodlab/CLAM)
-- DTFD-MIL (Zhang et al.) [https://github.com/hrzhang1123/DTFD-MIL](https://github.com/hrzhang1123/DTFD-MIL)
-- SETMIL (Zhao et al.) [https://github.com/Louis-YuZhao/SETMIL](https://github.com/Louis-YuZhao/SETMIL)
-- TransMIL (Shao et al.) [https://github.com/szc19990412/TransMIL](https://github.com/szc19990412/TransMIL)
-- im4MEC (Fremond et al.) [https://github.com/AIRMEC/im4MEC](https://github.com/AIRMEC/im4MEC)
+| Model      | Authors          | GitHub link                                             |
+|---------------|---------------|---------------------------------------------------------|
+| CLAM          | Lu et al.     | [https://github.com/mahmoodlab/CLAM](https://github.com/mahmoodlab/CLAM) |
+| DTFD-MIL      | Zhang et al.  | [https://github.com/hrzhang1123/DTFD-MIL](https://github.com/hrzhang1123/DTFD-MIL) |
+| SETMIL        | Zhao et al.   | [https://github.com/Louis-YuZhao/SETMIL](https://github.com/Louis-YuZhao/SETMIL) |
+| TransMIL      | Shao et al.   | [https://github.com/szc19990412/TransMIL](https://github.com/szc19990412/TransMIL) |
+| im4MEC        | Fremond et al.| [https://github.com/AIRMEC/im4MEC](https://github.com/AIRMEC/im4MEC) |
+
+
+### Reference
+
+This article has been accepted for publication by Oxford University Press and a DOI has been pre-registered. Detailed information will be added soon.
 
