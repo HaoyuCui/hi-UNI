@@ -119,6 +119,10 @@ We are grateful to the authors for sharing their code. We use CLAM for data prep
 | im4MEC        | Fremond et al.| [https://github.com/AIRMEC/im4MEC](https://github.com/AIRMEC/im4MEC) |
 
 
+### License
+
+This code is made available under the GPLv3 License and is available for non-commercial academic purposes.
+
 ### Reference
 
 This article has been accepted for publication by Oxford University Press and a DOI has been pre-registered. Detailed information will be added soon.
