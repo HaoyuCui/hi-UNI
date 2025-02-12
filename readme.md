@@ -7,8 +7,11 @@ Official code for **Prediction of molecular subtypes for endometrial cancer base
 
 > hi-UNI: hierarchical UNI is used for whole slide image classification, using a weakly supervised pipeline. Our method achieved state-of-the-art performance, offering cost-effective and fast molecular subtyping for endometrial cancer.
 
+## Overview
 
-### Installation
+<img width="1000" alt="image" align="center" src="https://github.com/user-attachments/assets/bcd49310-8c6d-4f74-89ee-33395315e1bf" />
+
+## Installation
 
 Install the dependencies 
 
@@ -16,32 +19,32 @@ Install the dependencies
 pip install -r requirements.txt
 ```
 
-### Preprocessing
+## Preprocessing
 
 1. We have uploaded another repo for data preprocessing: [WSI_Segmenter](https://github.com/HaoyuCui/WSI_Segmenter). Which can also be found in the [./preprocess](./preprocess) directory. The detailed patch extraction and segmentation steps can be found in the [./preprocess/readme.md](preprocess/readme.md). 
 
 2. Extract raw patches to at least 1024x1024 resolution, use [tiatoolbox](https://github.com/TissueImageAnalytics/tiatoolbox) or [DeepZoom](https://github.com/ncoudray/DeepPATH/blob/master/DeepPATH_code/00_preprocessing/0b_tileLoop_deepzoom6.py) for patch extraction. The tumor segmentation network can be easily added to these pipelines.
 
 
-### Data Preparation
+## Data Preparation
 
 1. Prepare the data in the following structure, png or jpeg format is supported. Note that extracting patches only from the tumor region is recommended.
 
-```markdown
-├── data
-│   ├── slide_1
-│   │   ├── patch_1.png
-│   │   ├── patch_2.png
-│   │   ├── ...
-│   ├── slide_2
-│   │   ├── patch_1.png
-│   │   ├── patch_2.png
-│   │   ├── ...
-│   ├── ...
-│   └── slide_n
-│       ├── ...
-│       └── patch_n.png
-```
+    ```markdown
+    ├── data
+    │   ├── slide_1
+    │   │   ├── patch_1.png
+    │   │   ├── patch_2.png
+    │   │   ├── ...
+    │   ├── slide_2
+    │   │   ├── patch_1.png
+    │   │   ├── patch_2.png
+    │   │   ├── ...
+    │   ├── ...
+    │   └── slide_n
+    │       ├── ...
+    │       └── patch_n.png
+    ```
 
 
 
@@ -75,7 +78,7 @@ pip install -r requirements.txt
     
     - Task-specific config: **class_names**
 
-### Train and evaluate
+## Train and evaluate
 
 1. Train & evaluate a single fold (e.g., fold 1) and evaluate on the validation set
     ```bash
@@ -86,12 +89,12 @@ pip install -r requirements.txt
     ```bash
     python ./scripts/train_kf.py
     ```
-3. Train & evaluate all folds (for Linux)
+   Train & evaluate all folds (for Linux)
     ```bash
     sh ./scripts/train_kf.sh
     ```
 
-4. The results will be saved in the `runs/` directory.
+3. The results will be saved in the `runs/` directory.
 
    In the format of:
    ```txt
@@ -106,7 +109,7 @@ pip install -r requirements.txt
    ```
    
 
-### Comparison experiments
+## Comparison experiments
 
 We are grateful to the authors for sharing their code. We use CLAM for data preprocessing and feature extraction in comparison experiments.
 
@@ -119,11 +122,27 @@ We are grateful to the authors for sharing their code. We use CLAM for data prep
 | im4MEC        | Fremond et al.| [https://github.com/AIRMEC/im4MEC](https://github.com/AIRMEC/im4MEC) |
 
 
-### License
+## License
 
-This code is made available under the GPLv3 License and is available for non-commercial academic purposes.
+© [IMIC](https://imic.nuist.edu.cn/) - This code is made available under the GPLv3 License and is available for non-commercial academic purposes.
 
-### Reference
+## Reference
 
-This article has been accepted for publication by Oxford University Press and a DOI has been pre-registered. Detailed information will be added soon.
+If you find our work useful in your research, please consider citing our paper:
+
+Haoyu Cui, Qinhao Guo, Jun Xu, Xiaohua Wu, Chengfei Cai, Yiping Jiao, Wenlong Ming, Hao Wen, Xiangxue Wang, Prediction of molecular subtypes for endometrial cancer based on hierarchical foundation model, _Bioinformatics_, 2025
+
+```bibtex
+@article{10.1093/bioinformatics/btaf059,
+    author = {Cui, Haoyu and Guo, Qinhao and Xu, Jun and Wu, Xiaohua and Cai, Chengfei and Jiao, Yiping and Ming, Wenlong and Wen, Hao and Wang, Xiangxue},
+    title = {Prediction of molecular subtypes for endometrial cancer based on hierarchical foundation model},
+    journal = {Bioinformatics},
+    pages = {btaf059},
+    year = {2025},
+    month = {02},
+    issn = {1367-4811},
+    doi = {10.1093/bioinformatics/btaf059},
+    url = {https://doi.org/10.1093/bioinformatics/btaf059},
+}
+```
 
