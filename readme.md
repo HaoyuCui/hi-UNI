@@ -28,7 +28,7 @@ pip install -r requirements.txt
 
 ## Data preparation
 
-1. Prepare the data in the following structure, png or jpeg format is supported. Note that extracting patches only from the tumor region is strongly recommended.
+1. Prepare the data in the following structure, png or jpeg format is supported. Note that extracting patches only from the tumor region is recommended.
 
     ```markdown
     ├── data
