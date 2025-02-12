@@ -26,9 +26,9 @@ pip install -r requirements.txt
 2. Extract raw patches to at least 1024x1024 resolution, use [tiatoolbox](https://github.com/TissueImageAnalytics/tiatoolbox) or [DeepZoom](https://github.com/ncoudray/DeepPATH/blob/master/DeepPATH_code/00_preprocessing/0b_tileLoop_deepzoom6.py) for patch extraction. The tumor segmentation network can be easily added to these pipelines.
 
 
-## Data Preparation
+## Data preparation
 
-1. Prepare the data in the following structure, png or jpeg format is supported. Note that extracting patches only from the tumor region is recommended.
+1. Prepare the data in the following structure, png or jpeg format is supported. Note that extracting patches only from the tumor region is strongly recommended.
 
     ```markdown
     ├── data
