@@ -1,10 +1,17 @@
 hi-UNI <img src="./utils/.hi-UNI-logo.png" width="280px" align="right" />
 ===========
 
-hierarchical UNI for whole slide image classification. Using weakly supervised pipeline.
+Official code for **Prediction of molecular subtypes for endometrial cancer based on hierarchical foundation model**. _Bioinformatics_
 
+[Journal link](https://doi.org/10.1093/bioinformatics/btaf059) | [Cite](https://github.com/HaoyuCui/hi-UNI?tab=readme-ov-file#Reference)
 
-### Installation
+> hi-UNI: hierarchical UNI is used for whole slide image classification, using a weakly supervised pipeline. Our method achieved state-of-the-art performance, offering cost-effective and fast molecular subtyping for endometrial cancer.
+
+## Overview
+
+<img width="1000" alt="image" align="center" src="https://github.com/user-attachments/assets/bcd49310-8c6d-4f74-89ee-33395315e1bf" />
+
+## Installation
 
 Install the dependencies 
 
@@ -12,32 +19,32 @@ Install the dependencies
 pip install -r requirements.txt
 ```
 
-### Preprocessing
+## Preprocessing
 
-1. We have uploaded another repo for data preprocessing: [WSI_Segmenter](https://github.com/HaoyuCui/WSI_Segmenter). Which can also be found in the [./preprocess](./preprocess) directory. The detailed patch extraction and segmentation steps can be found in the [./preprocess/read.md](preprocess/readme.md). 
+1. We have uploaded another repo for data preprocessing: [WSI_Segmenter](https://github.com/HaoyuCui/WSI_Segmenter). Which can also be found in the [./preprocess](./preprocess) directory. The detailed patch extraction and segmentation steps can be found in the [./preprocess/readme.md](preprocess/readme.md). 
 
 2. Extract raw patches to at least 1024x1024 resolution, use [tiatoolbox](https://github.com/TissueImageAnalytics/tiatoolbox) or [DeepZoom](https://github.com/ncoudray/DeepPATH/blob/master/DeepPATH_code/00_preprocessing/0b_tileLoop_deepzoom6.py) for patch extraction. The tumor segmentation network can be easily added to these pipelines.
 
 
-### Data Preparation
+## Data preparation
 
-1. Prepare the data in the following structure, png or jpeg format is supported. Note that extract patches only from the tumor region is recommended.
+1. Prepare the data in the following structure, png or jpeg format is supported. Note that extracting patches only from the tumor region is recommended.
 
-```markdown
-├── data
-│   ├── slide_1
-│   │   ├── patch_1.png
-│   │   ├── patch_2.png
-│   │   ├── ...
-│   ├── slide_2
-│   │   ├── patch_1.png
-│   │   ├── patch_2.png
-│   │   ├── ...
-│   ├── ...
-│   └── slide_n
-│       ├── ...
-│       └── patch_n.png
-```
+    ```markdown
+    ├── data
+    │   ├── slide_1
+    │   │   ├── patch_1.png
+    │   │   ├── patch_2.png
+    │   │   ├── ...
+    │   ├── slide_2
+    │   │   ├── patch_1.png
+    │   │   ├── patch_2.png
+    │   │   ├── ...
+    │   ├── ...
+    │   └── slide_n
+    │       ├── ...
+    │       └── patch_n.png
+    ```
 
 
 
@@ -71,7 +78,7 @@ pip install -r requirements.txt
     
     - Task-specific config: **class_names**
 
-### Train and evaluate
+## Train and evaluate
 
 1. Train & evaluate a single fold (e.g., fold 1) and evaluate on the validation set
     ```bash
@@ -82,18 +89,18 @@ pip install -r requirements.txt
     ```bash
     python ./scripts/train_kf.py
     ```
-3. Train & evaluate all folds (for Linux)
+   Train & evaluate all folds (for Linux)
     ```bash
     sh ./scripts/train_kf.sh
     ```
 
-4. The results will be saved in the `runs/` directory.
+3. The results will be saved in the `runs/` directory.
 
    In the format of:
    ```txt
     ├── runs
     │   ├── {cmbs}_{freeze_ration}  # configuration
-    │   │   ├── 1
+    │   │   ├── 1  # fold name
     │   │   │   ├── {fold}_best.pth  # best model
     │   │   │   ├── slide_{iter}.png  # slide-level ROC
     │   │   │   ├── ...
@@ -102,13 +109,40 @@ pip install -r requirements.txt
    ```
    
 
-### Comparison experiments
+## Comparison experiments
 
 We are grateful to the authors for sharing their code. We use CLAM for data preprocessing and feature extraction in comparison experiments.
 
-- CLAM (Lu et al.) [https://github.com/mahmoodlab/CLAM](https://github.com/mahmoodlab/CLAM)
-- DTFD-MIL (Zhang et al.) [https://github.com/hrzhang1123/DTFD-MIL](https://github.com/hrzhang1123/DTFD-MIL)
-- SETMIL (Zhao et al.) [https://github.com/Louis-YuZhao/SETMIL](https://github.com/Louis-YuZhao/SETMIL)
-- TransMIL (Shao et al.) [https://github.com/szc19990412/TransMIL](https://github.com/szc19990412/TransMIL)
-- im4MEC (Fremind et al.) [https://github.com/AIRMEC/im4MEC](https://github.com/AIRMEC/im4MEC)
+| Model      | Authors          | GitHub link                                             |
+|---------------|---------------|---------------------------------------------------------|
+| CLAM          | Lu et al.     | [https://github.com/mahmoodlab/CLAM](https://github.com/mahmoodlab/CLAM) |
+| DTFD-MIL      | Zhang et al.  | [https://github.com/hrzhang1123/DTFD-MIL](https://github.com/hrzhang1123/DTFD-MIL) |
+| SETMIL        | Zhao et al.   | [https://github.com/Louis-YuZhao/SETMIL](https://github.com/Louis-YuZhao/SETMIL) |
+| TransMIL      | Shao et al.   | [https://github.com/szc19990412/TransMIL](https://github.com/szc19990412/TransMIL) |
+| im4MEC        | Fremond et al.| [https://github.com/AIRMEC/im4MEC](https://github.com/AIRMEC/im4MEC) |
+
+
+## License
+
+© [IMIC](https://imic.nuist.edu.cn/) - This code is made available under the GPLv3 License and is available for non-commercial academic purposes.
+
+## Reference
+
+If you find our work useful in your research, please consider citing our paper:
+
+Haoyu Cui, Qinhao Guo, Jun Xu, Xiaohua Wu, Chengfei Cai, Yiping Jiao, Wenlong Ming, Hao Wen, Xiangxue Wang, Prediction of molecular subtypes for endometrial cancer based on hierarchical foundation model, _Bioinformatics_, 2025
+
+```bibtex
+@article{10.1093/bioinformatics/btaf059,
+    author = {Cui, Haoyu and Guo, Qinhao and Xu, Jun and Wu, Xiaohua and Cai, Chengfei and Jiao, Yiping and Ming, Wenlong and Wen, Hao and Wang, Xiangxue},
+    title = {Prediction of molecular subtypes for endometrial cancer based on hierarchical foundation model},
+    journal = {Bioinformatics},
+    pages = {btaf059},
+    year = {2025},
+    month = {02},
+    issn = {1367-4811},
+    doi = {10.1093/bioinformatics/btaf059},
+    url = {https://doi.org/10.1093/bioinformatics/btaf059},
+}
+```
 
